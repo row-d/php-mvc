@@ -1,16 +1,6 @@
 <?php
-$route = $_SERVER['REQUEST_URI'];
-$method = $_SERVER['REQUEST_METHOD'];
-
-define('LOG_DIR', '/logs');
-
-set_exception_handler(function ($throwable) {
-    global $content;
-    $logFile = __DIR__ . LOG_DIR . '/error.log';
-    $message = date('Y-m-d H:i:s') . ' - Error: ' . $throwable->getMessage() . ' in ' . $throwable->getFile() . ' on line ' . $throwable->getLine() . PHP_EOL;
-    file_put_contents($logFile, $message, FILE_APPEND);
-    $content = "An unexpected error occurred. Please check the logs for more information." . PHP_EOL;
-});
+require_once 'config.php';
+require_once UTILS_DIR . '/render_page.php';
 
 // api
 if (preg_match('/^\/api\/.*/', $route)) {
@@ -18,11 +8,9 @@ if (preg_match('/^\/api\/.*/', $route)) {
     require_once __DIR__ . '/api.php';
     exit;
 }
-// views 
-require __DIR__ . '/views/_layout.php';
-ob_start();
-$content = ob_get_clean();
-match ($route) {
-    '/', '' => require __DIR__ . '/views/home.php',
-    default => require __DIR__ . '/views/404.php',
-};
+
+// frontend 
+render_page(match ($route) {
+    '/' => PAGES_DIR . '/index.php',
+    default => PAGES_DIR . '/404.php',
+});

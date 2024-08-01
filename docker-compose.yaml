@@ -9,11 +9,26 @@ services:
     networks:
       - internal
   php:
-    image: php:8.3.9-fpm-alpine
+    build:
+      context: .docker/php
     volumes:
       - ./src:/var/www/html
     networks:
       - internal
+    env_file:
+      - .env
+  postgres:
+    image: postgres:16.3-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - internal
+    env_file:
+      - .env
 networks:
   internal:
     driver: bridge
