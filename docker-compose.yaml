@@ -8,6 +8,7 @@ services:
       - "8080:80"
     networks:
       - internal
+
   php:
     build:
       context: .docker/php

@@ -4,22 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $title ?? 'Page' ?></title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <style type="text/tailwindcss">
-    input{
-      @apply dark:bg-black dark:text-white;
-    }
+  <link rel="stylesheet" href="/public/css/pico.min.css">
+  <title>{{title}}</title>
   </style>
 </head>
 
 
-<body class="container mx-auto dark:bg-black dark:text-white">
+<body>
   <header>
-    <nav class="flex justify-between py-6">
+    <nav class="nav">
       <a href="/">Home</a>
       <ul>
-        <li><a href="/cats" class="underline"> Cats</a></li>
+        <li><a href="/cats"> Cats</a></li>
       </ul>
     </nav>
   </header>

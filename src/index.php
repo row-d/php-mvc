@@ -11,8 +11,9 @@ if (preg_match('/^\/api\/.*/', $route)) {
     exit;
 }
 
+
 // frontend 
 render_page(match ($route) {
-    '/' => PAGES_DIR . '/index.php',
-    default => PAGES_DIR . '/404.php'
+    '/' => [PAGES_DIR . '/index.php', ['title' => 'Home']],
+    default => [PAGES_DIR . '/404.php', ['title' => 'Page not found']],
 });

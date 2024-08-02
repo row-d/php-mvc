@@ -6,6 +6,7 @@ define('LAYOUTS_DIR', __DIR__ . '/views/layouts');
 define('PAGES_DIR', __DIR__ . '/views/pages');
 define('UTILS_DIR', __DIR__ . '/utils');
 define('API_DIR', __DIR__ . '/api');
+define('PUBLIC_DIR', __DIR__ . '/public');
 
 set_exception_handler(function (Throwable $throwable) {
   $logFile = LOG_DIR . '/error.log';
