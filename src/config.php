@@ -4,9 +4,11 @@ define('LOG_DIR', __DIR__ . '/logs');
 define('VIEWS_DIR', __DIR__ . '/views');
 define('LAYOUTS_DIR', __DIR__ . '/views/layouts');
 define('PAGES_DIR', __DIR__ . '/views/pages');
+define('PUBLIC_DIR', __DIR__ . '/public');
 define('UTILS_DIR', __DIR__ . '/utils');
 define('API_DIR', __DIR__ . '/api');
-define('PUBLIC_DIR', __DIR__ . '/public');
+define('MODELS_DIR', __DIR__ . '/models');
+define('CONTROLLERS_DIR', __DIR__ . '/controllers');
 
 set_exception_handler(function (Throwable $throwable) {
   $logFile = LOG_DIR . '/error.log';
@@ -15,3 +17,5 @@ set_exception_handler(function (Throwable $throwable) {
 });
 
 session_start();
+define("SESSION_ERRORS_KEY", 'errors');
+define("SESSION_AUTOCOMPLETE", 'autocomplete');
