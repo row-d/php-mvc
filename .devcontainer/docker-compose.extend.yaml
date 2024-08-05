@@ -1,8 +1,8 @@
+version: '3'
 services:
-  your-service-name-here:
+  php-mvc:
     volumes:
       - .:/workspace:cached
-
     cap_add:
       - SYS_PTRACE
     security_opt:
