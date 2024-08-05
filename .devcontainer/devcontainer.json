@@ -4,7 +4,7 @@
         "../docker-compose.yaml",
         "docker-compose.extend.yaml"
     ],
-    "service": "your-service-name-here",
+    "service": "php-mvc",
     "workspaceFolder": "/workspace",
     "shutdownAction": "stopCompose"
 }
