@@ -1,8 +1,8 @@
 {
     "name": "php-mvc",
     "dockerComposeFile": [
-        "../docker-compose.yml",
-        "docker-compose.extend.yml"
+        "../docker-compose.yaml",
+        "docker-compose.extend.yaml"
     ],
     "service": "your-service-name-here",
     "workspaceFolder": "/workspace",
