@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-include_once MODELS_DIR . '/model.php';
+include_once FRAMEWORK_DIR . '/model.php';
 class UserModel extends Model
 {
   public string $firstname = '';
@@ -26,6 +26,7 @@ class UserModel extends Model
 
   public function verifyUnique(string $attr): bool
   {
+    //TODO: check if the value is unique in the database
     return true;
   }
 }

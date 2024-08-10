@@ -1,5 +1,5 @@
 <?php
-require_once UTILS_DIR . '/get_view_content.php';
+require_once __DIR__ . '/get_view_content.php';
 /**
  * Renderiza una página web utilizando un layout y contenido específico.
  * @param array $data Array que contiene la información necesaria para renderizar la página.

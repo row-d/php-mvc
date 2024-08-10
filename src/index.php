@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once UTILS_DIR . '/render_page.php';
+require_once FRAMEWORK_DIR . '/render_page.php';
 
 $route = strtok($_SERVER["REQUEST_URI"], '?');
 

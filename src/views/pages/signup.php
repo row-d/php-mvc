@@ -13,8 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION[SESSION_ERRORS_KEY] = $user->errors;
   }
 }
-
-
 ?>
 <header class="container">
   <?php include_once VIEWS_DIR . '/partials/nav.php'; ?>

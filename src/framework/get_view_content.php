@@ -8,9 +8,9 @@
  * @param string $path La ruta del archivo PHP que se va a cargar.
  * @return bool|string El contenido del archivo como una cadena, o false si ocurre un error.
  */
-function get_view_content(string $path): bool|string
+function get_view_content(string $path, bool $once = true): bool|string
 {
   ob_start();
-  require_once $path;
+  $once ? require_once $path : require $path;
   return ob_get_clean();
 }
